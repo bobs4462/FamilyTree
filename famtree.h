@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 struct famtree {
     char *name;
@@ -14,7 +15,5 @@ typedef struct famtree * ftptr;
 ftptr build_tree(FILE *treefile);
 ftptr create_member(char *value, ftptr ancestor);
 char** getwords(char *line, size_t *size);
-void deepsearch(ftptr ancestor, char * target);
-void widesearch(ftptr ancestor, char * target);
+void search(ftptr ancestor, char * target, char c);
 int lineget(char **text, FILE *fileptr);
-int sift(char **text);
